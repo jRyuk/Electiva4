@@ -1,5 +1,6 @@
 ﻿
 using DAL;
+using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +19,7 @@ namespace CuentasPorPagar
             InitializeComponent();
             DbContext.Instance.Init("default");
 
-            DbContext.Instance.Add<DateTime>();
+            DbContext.Instance.Add<Roles>(new Roles() { Name= "test1"});
 
         }
     }
