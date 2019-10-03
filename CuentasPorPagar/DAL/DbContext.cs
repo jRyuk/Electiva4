@@ -28,7 +28,7 @@ namespace DAL
         }
 
 
-        #region Dinamic implementation
+        #region Dynamic implementation
         public int Add<T>(T element) where T : new()
         {
             Open();
@@ -42,8 +42,6 @@ namespace DAL
 
                 return result;
             }
-
-           
         }
 
         private string GenerateInsert<T>(T element) where T: new() {

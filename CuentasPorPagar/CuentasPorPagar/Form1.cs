@@ -19,7 +19,7 @@ namespace CuentasPorPagar
             InitializeComponent();
             DbContext.Instance.Init("default");
 
-            DbContext.Instance.Add<Roles>(new Roles() { Name= "test1"});
+            DbContext.Instance.Add<Roles>(new Roles() { Name= "Hola mundirijillo"});
 
         }
     }
