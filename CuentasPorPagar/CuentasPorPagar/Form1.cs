@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +16,10 @@ namespace CuentasPorPagar
         public Form1()
         {
             InitializeComponent();
+            DbContext.Instance.Init("default");
+
+            DbContext.Instance.Add<DateTime>();
+
         }
     }
 }
