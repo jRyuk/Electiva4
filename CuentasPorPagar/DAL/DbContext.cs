@@ -88,9 +88,13 @@ namespace DAL
             var value = property.GetValue(element, null);
 
 
-            if (property.PropertyType == typeof(string)) {
-                return !string.IsNullOrEmpty(value?.ToString()) ? $"'{value}'": "''";
-            }
+            if (property.PropertyType == typeof(string))
+                return !string.IsNullOrEmpty(value?.ToString()) ? $"'{value}'" : "''";
+            
+            else if (property.PropertyType == typeof(int))
+                return $"{int.Parse(value.ToString())}";
+            else if(property.PropertyType == typeof(byte))
+                return $"{byte.Parse(value.ToString())}";
 
             return "''";
         }

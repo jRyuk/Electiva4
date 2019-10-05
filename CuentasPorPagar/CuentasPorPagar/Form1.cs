@@ -19,7 +19,27 @@ namespace CuentasPorPagar
             InitializeComponent();
             DbContext.Instance.Init("default");
 
-            DbContext.Instance.Add<Roles>(new Roles() { Name= "Hola mundirijillo"});
+            /*DbContext.Instance.Add<Roles>(new Roles() { Nombre= "Administrador"});
+            DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Compras" });
+            DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Tesoreria" });*/
+
+            DbContext.Instance.Add<Usuarios>(new Usuarios() {
+                Nombre = "Test",
+                DUI = "sadsadsad",
+                Direccion = "asdsad",
+                Email = "asdsad",
+                Habilitado = 1,
+                HashPassword = "asdsadasd",
+                IdRole = 1,
+                NIT = "sadsad",
+                Usuario= "add"
+
+            });
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

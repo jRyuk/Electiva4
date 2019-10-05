@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DbContext.cs" />
     <Compile Include="Models\Roles.cs" />
+    <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
