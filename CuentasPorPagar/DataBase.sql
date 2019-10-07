@@ -1,13 +1,26 @@
-use master
-create database CuentasPorPagar;
-Go
-Use CuentasPorPagar
-Go
+--use master
+--create database CuentasPorPagar;
+--Go
+--Use CuentasPorPagar
+--Go
 create table Roles(
 	Id int primary key identity(1,1),
 	Nombre nvarchar(20)
 )
-drop table Usuarios
+create table Paises(
+	Id int primary key identity(1,1),
+	Nombre nvarchar(30)
+)
+create table Departamentos(
+	Id int primary key identity(1,1),
+	Nombre nvarchar(30),
+	IdPais int
+)
+create table Municipios(
+	Id int primary key identity(1,1),
+	Nombre nvarchar(60),
+	IdDepartamento int
+)
 create table Usuarios(
 	Id int primary key identity(1,1),
 	Nombre nvarchar(60),
@@ -23,6 +36,9 @@ create table Usuarios(
 create table Proveedor(
 	Id int primary key identity(1,1),
 	Nombre nvarchar(60),
+	IdPais int,
+	IdDepartamento int,
+	IdMunicipio int,
 	Direccion nvarchar(200),
 	NumeroRegistro nvarchar(25),
 	NIT nvarchar(17),
@@ -62,6 +78,17 @@ create table Pagos(
 	IdUsuario int,
 	TipoPago int
 )
+Go
+-- Creación de Foreigns Keys
+alter table Departamentos
+add constraint FK_departamento_pais
+foreign key (IdPais)
+references Paises(Id);
+
+alter table Municipios
+add constraint FK_municipio_departamento
+foreign key (IdDepartamento)
+references Departamentos(Id);
 
 alter table Usuarios
 add constraint FK_usuarios_roles
@@ -87,3 +114,14 @@ alter table Documento
 add constraint FK_documento_usuario
 foreign key(IdUsuario)
 references Usuarios(Id);
+
+--Trigger y Otros procedimientos
+
+-- Encriptar clave al momento de insertar
+GO
+CREATE TRIGGER encriptar on Usuarios AFTER INSERT
+AS
+BEGIN
+UPDATE Usuarios SET HashPassword=EncryptByPassPhrase('nirePassword',HashPassword) WHERE Id=(select Id from inserted)
+END;
+GO
