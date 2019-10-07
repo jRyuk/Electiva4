@@ -3,6 +3,7 @@
 --Go
 --Use CuentasPorPagar
 --Go
+drop database 
 create table Roles(
 	Id int primary key identity(1,1),
 	Nombre nvarchar(20)
@@ -31,7 +32,7 @@ create table Usuarios(
 	Usuario nvarchar(10) unique,
 	HashPassword varbinary(500),
 	Habilitado bit,
-	IdRol int
+	IdRole int
 )
 create table Proveedor(
 	Id int primary key identity(1,1),
@@ -92,7 +93,7 @@ references Departamentos(Id);
 
 alter table Usuarios
 add constraint FK_usuarios_roles
-foreign key (IdRol)
+foreign key (IdRole)
 references Roles(Id);
 
 alter table ContactoProveedor

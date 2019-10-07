@@ -89,7 +89,12 @@ namespace DAL
 
 
             if (property.PropertyType == typeof(string))
+            {
+                if (property.Name== "HashPassword")
+                    return !string.IsNullOrEmpty(value?.ToString()) ? $"CONVERT(VARBINARY,'{value}')" : "''";
                 return !string.IsNullOrEmpty(value?.ToString()) ? $"'{value}'" : "''";
+            }
+                
             
             else if (property.PropertyType == typeof(int))
                 return $"{int.Parse(value.ToString())}";
