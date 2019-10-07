@@ -35,13 +35,60 @@ namespace DAL
 
             var strCommand = GenerateInsert(element);
 
-            using (var cmd = new SqlCommand(strCommand, _sqlConnection))
+            using (sqlCmd = new SqlCommand(strCommand, _sqlConnection))
             {
-                 var result  = cmd.ExecuteNonQuery();
+                 var result  = sqlCmd.ExecuteNonQuery();
                 Close();
 
                 return result;
             }
+        }
+
+        public T Find<T>(string query) where T: new()
+        {
+            var tSelected = new T();
+            _sqlConnection.Open();
+            var strCommand = query;
+            using (sqlCmd = new SqlCommand(strCommand, _sqlConnection))
+            {
+                using (SqlDataReader reader = sqlCmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        GetReader<T>(tSelected, reader);
+                        _sqlConnection.Close();
+                        return tSelected;
+                    }
+                }
+            }
+
+            _sqlConnection.Close();
+            return default(T);
+        }
+
+        private T GetReader<T>(T element,SqlDataReader reader ) where T: new()
+        {
+            var typeElement = element.GetType();
+
+
+            if (!reader.HasRows) return default(T);
+
+            foreach (var property in typeElement.GetProperties())
+            {
+
+                var type = reader[property.Name].GetType();
+                var value = reader[property.Name];
+                if (type == typeof(byte[]))
+                    value = value.ToString();
+                else if (type == typeof(bool)) {
+                    value = (bool)value ? (byte)1: (byte)0;
+                }
+                   
+
+                property.SetValue(element, value, null);
+            }
+
+            return  default(T);
         }
 
         private string GenerateInsert<T>(T element) where T: new() {
@@ -103,13 +150,13 @@ namespace DAL
 
             return "''";
         }
-
         #endregion
 
         #region Singleton Implementation 
         private static DbContext _instance;
+        private SqlCommand sqlCmd;
 
-       public static DbContext Instance
+        public static DbContext Instance
         {
             get {
 

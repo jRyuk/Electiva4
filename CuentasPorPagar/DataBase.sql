@@ -1,9 +1,9 @@
---use master
---create database CuentasPorPagar;
---Go
---Use CuentasPorPagar
---Go
-drop database 
+use master
+create database CuentasPorPagar;
+Go
+Use CuentasPorPagar
+Go
+
 create table Roles(
 	Id int primary key identity(1,1),
 	Nombre nvarchar(20)
@@ -123,6 +123,15 @@ GO
 CREATE TRIGGER encriptar on Usuarios AFTER INSERT
 AS
 BEGIN
-UPDATE Usuarios SET HashPassword=EncryptByPassPhrase('nirePassword',HashPassword) WHERE Id=(select Id from inserted)
+UPDATE Usuarios SET HashPassword=EncryptByPassPhrase(N'nirePassword', CONVERT(Nvarchar(100),HashPassword)) WHERE Id=(select Id from inserted)
 END;
 GO
+
+
+Create procedure LoginUser 
+	@User nvarchar(100),
+	@password nvarchar(100)
+	as 
+	begin 
+		select * from Usuarios where Usuario=@User and DECRYPTBYPASSPHRASE(N'nirePassword',HashPassword) = CONVERT(varchar(100),@password)
+	end 
