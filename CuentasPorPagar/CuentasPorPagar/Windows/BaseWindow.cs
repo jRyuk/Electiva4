@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
 namespace CuentasPorPagar.Windows
 {
-    public partial class MainAdmin : CuentasPorPagar.Windows.BaseWindow
+    public partial class BaseWindow : Form
     {
-        public MainAdmin()
+        public BaseWindow()
         {
             InitializeComponent();
         }

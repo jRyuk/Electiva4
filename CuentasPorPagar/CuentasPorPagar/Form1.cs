@@ -22,23 +22,23 @@ namespace CuentasPorPagar
             InitializeComponent();
             DbContext.Instance.Init("default");
 
-            DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Administrador" });
-            ///////*DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Compras" });
-            //////DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Tesoreria" });*/
+            //DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Administrador" });
+            /////////*DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Compras" });
+            ////////DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Tesoreria" });*/
 
-            DbContext.Instance.Add<Usuarios>(new Usuarios()
-            {
-                Nombre = "Test",
-                DUI = "sadsadsad",
-                Direccion = "asdsad",
-                Email = "asdsad",
-                Habilitado = 1,
-                HashPassword = "Declicforever",
-                IdRole = 1,
-                NIT = "sadsad",
-                Usuario = "Addmin"
+            //DbContext.Instance.Add<Usuarios>(new Usuarios()
+            //{
+            //    Nombre = "Test",
+            //    DUI = "sadsadsad",
+            //    Direccion = "asdsad",
+            //    Email = "asdsad",
+            //    Habilitado = 1,
+            //    HashPassword = "Declicforever",
+            //    IdRole = 1,
+            //    NIT = "sadsad",
+            //    Usuario = "Addmin"
 
-            });
+            //});
 
         }
 
@@ -54,9 +54,9 @@ namespace CuentasPorPagar
                 switch (Login.Instance.LoginInfo.IdRole)
                 {
                     case (int)UserType.Admin:
-                        _current = new MainAdmin();
-                        this.Hide();
-                        _current.Show();
+                        //_current = new MainAdmin();
+                        //this.Hide();
+                        //_current.Show();
                         break;
                 }
             }
