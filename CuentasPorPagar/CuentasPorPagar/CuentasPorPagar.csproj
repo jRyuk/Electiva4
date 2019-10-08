@@ -66,6 +66,12 @@
     <Compile Include="Windows\MainAdmin.Designer.cs">
       <DependentUpon>MainAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MainContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MainContainer.Designer.cs">
+      <DependentUpon>MainContainer.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LoginWindow.resx">
       <DependentUpon>LoginWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainAdmin.resx">
       <DependentUpon>MainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MainContainer.resx">
+      <DependentUpon>MainContainer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

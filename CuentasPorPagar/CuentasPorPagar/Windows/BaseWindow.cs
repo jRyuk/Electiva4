@@ -19,7 +19,7 @@ namespace CuentasPorPagar.Windows
 
         private void BaseWindow_Load(object sender, EventArgs e)
         {
-            txtUser.Text = $"¡Bienvenido! {Login.Instance.LoginInfo.Nombre}";
+         
         }
 
         protected void Loaddata(DataTable table)

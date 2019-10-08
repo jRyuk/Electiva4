@@ -54,7 +54,7 @@ namespace CuentasPorPagar
                 switch (DAL.BAL.Login.Instance.LoginInfo.IdRole)
                 {
                     case (int)UserType.Admin:
-                        _current = new MainAdmin();
+                        _current = new MainContainer();
                         
                         _current.Show();
                         this.Hide();
