@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -12,6 +13,9 @@ namespace DAL
     {
         private string _connectionString = string.Empty;
         private SqlConnection _sqlConnection;
+
+        private SqlDataAdapter _adapter;
+        private DataTable _dataSet;
 
         private DbContext() {
 
@@ -64,6 +68,22 @@ namespace DAL
 
             _sqlConnection.Close();
             return default(T);
+        }
+
+        public DataTable GetAll(string command)
+        {
+            _adapter = new SqlDataAdapter();
+            var sqlCmd = new SqlCommand(command, _sqlConnection);
+            Open();
+
+            _adapter.SelectCommand = sqlCmd;
+            _dataSet = new DataTable();
+
+            _adapter.Fill(_dataSet);
+            Close();
+            return _dataSet;
+
+
         }
 
         private T GetReader<T>(T element,SqlDataReader reader ) where T: new()
@@ -129,7 +149,6 @@ namespace DAL
             return baseCommand;
         }
 
-
         private string GenerateSqlValue<T>(PropertyInfo property, T element ) where T : new()
         {
             var value = property.GetValue(element, null);
@@ -150,6 +169,10 @@ namespace DAL
 
             return "''";
         }
+
+
+
+
         #endregion
 
         #region Singleton Implementation 

@@ -15,9 +15,9 @@ using System.Windows.Forms;
 
 namespace CuentasPorPagar
 {
-    public partial class Form1 : Form
+    public partial class LoginWindow : Form
     {
-        public Form1()
+        public LoginWindow()
         {
             InitializeComponent();
             DbContext.Instance.Init("default");
@@ -47,16 +47,17 @@ namespace CuentasPorPagar
 
             //todo-> Validate empty fields 
 
-            var result = Login.Instance.LoginUser(txtUsuario.Text, txtPassword.Text);
+            var result = DAL.BAL.Login.Instance.LoginUser(txtUsuario.Text, txtPassword.Text);
 
-            if (result && Login.Instance.LoginInfo != null )
+            if (result && DAL.BAL.Login.Instance.LoginInfo != null )
             {
-                switch (Login.Instance.LoginInfo.IdRole)
+                switch (DAL.BAL.Login.Instance.LoginInfo.IdRole)
                 {
                     case (int)UserType.Admin:
-                        //_current = new MainAdmin();
-                        //this.Hide();
-                        //_current.Show();
+                        _current = new MainAdmin();
+                        
+                        _current.Show();
+                        this.Hide();
                         break;
                 }
             }

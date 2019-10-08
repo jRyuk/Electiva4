@@ -1,6 +1,6 @@
 ﻿namespace CuentasPorPagar
 {
-    partial class Form1
+    partial class LoginWindow
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -78,7 +78,7 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // LoginWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,8 +88,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LoginWindow";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

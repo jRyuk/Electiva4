@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL.BAL;
+using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +15,13 @@ namespace CuentasPorPagar.Windows
         public MainAdmin()
         {
             InitializeComponent();
+        }
+
+        private void MainAdmin_Load(object sender, EventArgs e)
+        {
+            this.txtTitle.Text = "Usuarios";
+
+            Loaddata(UsuariosBAL.Instance.GetAll());
         }
     }
 }
