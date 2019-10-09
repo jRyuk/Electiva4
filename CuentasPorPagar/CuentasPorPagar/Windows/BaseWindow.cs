@@ -24,7 +24,9 @@ namespace CuentasPorPagar.Windows
 
         protected void Loaddata(DataTable table)
         {
+            
             this.dataGridView1.AutoGenerateColumns = true;
+            this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = table;
            
            

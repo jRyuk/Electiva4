@@ -30,7 +30,7 @@ namespace CuentasPorPagar.Windows
         protected override void btnCrear_Click(object sender, EventArgs e)
         {
             base.btnCrear_Click(sender, e);
-            var formCreateUser = new CreateUser();
+            var formCreateUser = new CreateUser(null, Loaddata);
             formCreateUser.MdiParent = _mdiParentForm;
             formCreateUser.Show();
         }
@@ -48,6 +48,14 @@ namespace CuentasPorPagar.Windows
         protected override void btnActualizar_Click(object sender, EventArgs e)
         {
             base.btnActualizar_Click(sender, e);
+
+            //validar seleccionado 
+            var selectedRow = dataGridView1.SelectedRows[0].Cells[0].Value;
+            var user = DbContext.Instance.Find<Usuarios>($"select * from Usuarios where Id={selectedRow}");
+
+            var formCreateUser = new CreateUser(user, Loaddata);
+            formCreateUser.MdiParent = _mdiParentForm;
+            formCreateUser.Show();
         }
     }
 }
