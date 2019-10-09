@@ -22,7 +22,7 @@ namespace CuentasPorPagar.Windows
 
         private void MainAdmin_Load(object sender, EventArgs e)
         {
-            this.txtTitle.Text = "Usuarios";
+           Text = this.txtTitle.Text = "Usuarios";
 
             Loaddata(UsuariosBAL.Instance.GetAll());
         }

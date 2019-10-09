@@ -1,4 +1,5 @@
-﻿using DAL.BAL;
+﻿using CuentasPorPagar.Windows.Proveedores;
+using DAL.BAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,10 +31,27 @@ namespace CuentasPorPagar.Windows
             mainAdmin.Show();
         }
 
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mainAdmin = new MainProveedores();
+            mainAdmin.MdiParent = this;
+            mainAdmin.Show();
+        }
+
         private void LoadMenu()
         {
-            var menuUsuarios = new ToolStripMenuItem("Administrar usuarios",null,usuariosToolStripMenuItem_Click);
-            administrarToolStripMenuItem.DropDownItems.Add(menuUsuarios);
+
+            switch (Login.Instance.LoginInfo.IdRole)
+            {
+                case 1:
+
+                    var menuUsuarios = new ToolStripMenuItem("Administrar usuarios", null, usuariosToolStripMenuItem_Click);
+                    administrarToolStripMenuItem.DropDownItems.Add(menuUsuarios);
+                    var menuProveedores = new ToolStripMenuItem("Administrar proveedores", null, proveedoresToolStripMenuItem_Click);
+                    administrarToolStripMenuItem.DropDownItems.Add(menuProveedores);
+                    break;
+
+            }
         }
 
     }
