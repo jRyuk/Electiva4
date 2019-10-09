@@ -60,6 +60,12 @@
     <Compile Include="Windows\BaseWindow.Designer.cs">
       <DependentUpon>BaseWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\CreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\MainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </Compile>
     <EmbeddedResource Include="Windows\BaseWindow.resx">
       <DependentUpon>BaseWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\MainAdmin.resx">
       <DependentUpon>MainAdmin.cs</DependentUpon>

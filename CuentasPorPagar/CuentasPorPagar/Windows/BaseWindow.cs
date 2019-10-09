@@ -30,6 +30,19 @@ namespace CuentasPorPagar.Windows
            
         }
 
-      
+        protected virtual void btnCrear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void btnActualizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,3 +8,8 @@
 /CuentasPorPagar.exe
 /CuentasPorPagar.pdb
 *.cache
+/CuentasPorPagar.LoginWindow.resources
+/CuentasPorPagar.Windows.BaseWindow.resources
+/CuentasPorPagar.Windows.CreateUser.resources
+/CuentasPorPagar.Windows.MainAdmin.resources
+/CuentasPorPagar.Windows.MainContainer.resources

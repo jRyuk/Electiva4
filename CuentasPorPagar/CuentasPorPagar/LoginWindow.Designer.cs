@@ -41,6 +41,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(337, 20);
             this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Text = "Addmin";
             // 
             // txtPassword
             // 
@@ -49,6 +50,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(337, 20);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Text = "Declicforever";
             // 
             // label1
             // 
