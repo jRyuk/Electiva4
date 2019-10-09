@@ -119,8 +119,10 @@ references Usuarios(Id);
 --Trigger y Otros procedimientos
 
 -- Encriptar clave al momento de insertar
+Go
+Drop trigger encriptar
 GO
-CREATE TRIGGER encriptar on Usuarios AFTER INSERT
+CREATE TRIGGER encriptar on Usuarios AFTER INSERT, UPDATE
 AS
 BEGIN
 UPDATE Usuarios SET HashPassword=EncryptByPassPhrase(N'nirePassword', CONVERT(Nvarchar(100),HashPassword)) WHERE Id=(select Id from inserted)

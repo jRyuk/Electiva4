@@ -48,6 +48,21 @@ namespace DAL
             }
         }
 
+        public int Update<T>(T element) where T : new()
+        {
+            Open();
+
+            var strCommand = GenerateUpdate(element);
+
+            using (sqlCmd = new SqlCommand(strCommand, _sqlConnection))
+            {
+                var result = sqlCmd.ExecuteNonQuery();
+                Close();
+
+                return result;
+            }
+        }
+
         public T Find<T>(string query) where T: new()
         {
             var tSelected = new T();
@@ -161,6 +176,37 @@ namespace DAL
                     baseCommand += value + ",";
             }
 
+
+            return baseCommand;
+        }
+
+        private string GenerateUpdate<T>(T element) where T: new()
+        {
+            var type = element.GetType();
+            var properties = type.GetProperties();
+
+            var last = properties.LastOrDefault();
+
+            var baseCommand = $"Update {type.Name} SET ";
+            var Id = "";
+            
+            foreach (var property in properties)
+            {
+
+                if (property.Name == "Id")
+                {
+                    Id = GenerateSqlValue(property, element);
+                    continue;
+                }
+                baseCommand += property.Name+"=";
+
+                var value = GenerateSqlValue(property, element);
+
+                if (property == last)
+                    baseCommand += value + "WHERE Id="+Id;
+                else
+                    baseCommand += value + ",";
+            }
 
             return baseCommand;
         }
