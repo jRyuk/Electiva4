@@ -70,6 +70,22 @@ namespace DAL
             return default(T);
         }
 
+        public int DeleteCommand(string query) 
+        {
+    
+            _sqlConnection.Open();
+            var strCommand = query;
+            using (sqlCmd = new SqlCommand(strCommand, _sqlConnection))
+            {
+                var result = sqlCmd.ExecuteNonQuery();
+                _sqlConnection.Close();
+               return result;
+
+            }
+         
+        }
+
+
         public DataTable GetAll(string command)
         {
             _adapter = new SqlDataAdapter();

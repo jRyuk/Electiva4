@@ -1,4 +1,5 @@
-﻿using DAL.BAL;
+﻿using DAL;
+using DAL.BAL;
 using DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,11 @@ namespace CuentasPorPagar.Windows
         protected override void btnEliminar_Click(object sender, EventArgs e)
         {
             base.btnEliminar_Click(sender, e);
+
+            //todo-> validad que este seleccionado y preguntar si desea eliminar 
+            var selectedRow = dataGridView1.SelectedRows[0].Cells[0].Value;
+
+            DbContext.Instance.DeleteCommand($"Delete usuarios where Id='{selectedRow}'");
         }
 
         protected override void btnActualizar_Click(object sender, EventArgs e)
