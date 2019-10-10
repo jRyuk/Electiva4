@@ -33,7 +33,7 @@ namespace CuentasPorPagar.Windows
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var mainAdmin = new MainProveedores();
+            var mainAdmin = new MainProveedores(this);
             mainAdmin.MdiParent = this;
             mainAdmin.Show();
         }

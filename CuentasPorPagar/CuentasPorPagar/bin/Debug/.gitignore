@@ -4,3 +4,4 @@
 /DAL.dll
 /DAL.pdb
 /App.config
+*.exe.config

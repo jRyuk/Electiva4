@@ -45,6 +45,7 @@
     <Compile Include="BAL\Login.cs" />
     <Compile Include="BAL\Usuarios.cs" />
     <Compile Include="DbContext.cs" />
+    <Compile Include="Models\Departamentos.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

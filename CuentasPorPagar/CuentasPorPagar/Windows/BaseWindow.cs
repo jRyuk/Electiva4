@@ -12,9 +12,17 @@ namespace CuentasPorPagar.Windows
 {
     public partial class BaseWindow : Form
     {
+        protected readonly Form _mdiParentForm;
+        public BaseWindow(Form form=null)
+        {
+            InitializeComponent();
+            _mdiParentForm = form;
+        }
+
         public BaseWindow()
         {
             InitializeComponent();
+           
         }
 
         private void BaseWindow_Load(object sender, EventArgs e)

@@ -13,11 +13,11 @@ namespace CuentasPorPagar.Windows
 {
     public partial class MainAdmin : CuentasPorPagar.Windows.BaseWindow
     {
-        readonly Form _mdiParentForm;
-        public MainAdmin(Form form)
+        
+        public MainAdmin(Form form): base(form)
         {
             InitializeComponent();
-            _mdiParentForm = form;
+            
         }
 
         private void MainAdmin_Load(object sender, EventArgs e)
