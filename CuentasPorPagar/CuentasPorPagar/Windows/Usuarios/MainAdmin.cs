@@ -24,7 +24,7 @@ namespace CuentasPorPagar.Windows
         {
            Text = this.txtTitle.Text = "Usuarios";
 
-            Loaddata(UsuariosBAL.Instance.GetAll());
+            Loaddata(UsuariosBAL.Instance.GetAllUsuarios());
         }
 
         protected override void btnCrear_Click(object sender, EventArgs e)
@@ -43,6 +43,8 @@ namespace CuentasPorPagar.Windows
             var selectedRow = dataGridView1.SelectedRows[0].Cells[0].Value;
 
             DbContext.Instance.DeleteCommand($"Delete usuarios where Id='{selectedRow}'");
+
+            Loaddata(UsuariosBAL.Instance.GetAllUsuarios());
         }
 
         protected override void btnActualizar_Click(object sender, EventArgs e)

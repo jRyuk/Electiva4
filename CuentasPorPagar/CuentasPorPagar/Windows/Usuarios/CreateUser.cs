@@ -62,7 +62,7 @@ namespace CuentasPorPagar.Windows
             else
                 DbContext.Instance.Update(_usuario);
 
-            DoAction?.Invoke(UsuariosBAL.Instance.GetAll());
+            DoAction?.Invoke(UsuariosBAL.Instance.GetAllUsuarios());
             this.Close();
             
         }
