@@ -125,9 +125,17 @@ GO
 CREATE TRIGGER encriptar on Usuarios AFTER INSERT, UPDATE
 AS
 BEGIN
-UPDATE Usuarios SET HashPassword=EncryptByPassPhrase(N'nirePassword', CONVERT(Nvarchar(100),HashPassword)) WHERE Id=(select Id from inserted)
+IF UPDATE(HashPassword)
+	BEGIN
+		UPDATE Usuarios SET HashPassword=EncryptByPassPhrase(N'nirePassword', CONVERT(Nvarchar(100),HashPassword)) WHERE Id=(select Id from inserted)
+	END
 END;
 GO
+
+
+
+
+
 
 
 Create procedure LoginUser 
@@ -138,7 +146,7 @@ Create procedure LoginUser
 		select * from Usuarios where Usuario=@User and DECRYPTBYPASSPHRASE(N'nirePassword',HashPassword) = CONVERT(varchar(100),@password)
 	end 
 	
-	
+use CuentasPorPagar;	
 Insert into Paises(Nombre) values ('El Salvador');
 
 insert into Departamentos (Nombre, IdPais) values ('Ahuachapán',1);
@@ -444,3 +452,10 @@ insert into municipios (Nombre, IdDepartamento) values('San José',14)
 insert into municipios (Nombre, IdDepartamento) values('Santa Rosa de Lima',14)
 insert into municipios (Nombre, IdDepartamento) values('Yayantique',14)
 insert into municipios (Nombre, IdDepartamento) values('Yucuaiquín',14)
+
+
+-------
+---Roles
+
+insert into Roles (Nombre) values ('Compras')
+insert into Roles (Nombre) values ('Tesoreria')

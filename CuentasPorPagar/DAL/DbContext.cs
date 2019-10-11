@@ -192,15 +192,20 @@ namespace DAL
             
             foreach (var property in properties)
             {
+                var value = GenerateSqlValue(property, element);
 
                 if (property.Name == "Id")
                 {
                     Id = GenerateSqlValue(property, element);
                     continue;
                 }
+                if(property.Name == "HashPassword" && value == "''")
+                {
+                    continue;
+                }
                 baseCommand += property.Name+"=";
 
-                var value = GenerateSqlValue(property, element);
+                
 
                 if (property == last)
                     baseCommand += value + "WHERE Id="+Id;
