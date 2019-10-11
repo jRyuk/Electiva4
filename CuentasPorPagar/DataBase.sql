@@ -120,7 +120,7 @@ references Usuarios(Id);
 
 -- Encriptar clave al momento de insertar
 Go
-Drop trigger encriptar
+
 GO
 CREATE TRIGGER encriptar on Usuarios AFTER INSERT, UPDATE
 AS
@@ -146,7 +146,8 @@ Create procedure LoginUser
 		select * from Usuarios where Usuario=@User and DECRYPTBYPASSPHRASE(N'nirePassword',HashPassword) = CONVERT(varchar(100),@password)
 	end 
 	
-use CuentasPorPagar;	
+GO 
+
 Insert into Paises(Nombre) values ('El Salvador');
 
 insert into Departamentos (Nombre, IdPais) values ('Ahuachapán',1);
@@ -457,5 +458,9 @@ insert into municipios (Nombre, IdDepartamento) values('Yucuaiquín',14)
 -------
 ---Roles
 
+insert into Roles (Nombre) values ('Admin')
 insert into Roles (Nombre) values ('Compras')
 insert into Roles (Nombre) values ('Tesoreria')
+
+insert into Usuarios (Direccion,DUI, Email, Habilitado, HashPassword,IdRole,NIT,Nombre,Usuario) values
+('asdsd','asdasddasd','sadsad',1,convert(varbinary,'Declicforever'),1,'ASASAS','admin','admin')
