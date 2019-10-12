@@ -50,6 +50,7 @@ create table ContactoProveedor(
 	Nombre nvarchar(60),
 	DUI nvarchar(10),
 	Email nvarchar(30),
+	Telefono nvarchar(15),
 	Cargo nvarchar(17),
 	IdProveedor int
 )
