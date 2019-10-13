@@ -37,7 +37,7 @@ namespace DAL.BAL
         public DataTable GetAllDocuments(string command = null)
         {
             return base.GeAllFromTable("Select Documento.Id, NumeroDocumento as '# Documento', ValorTotal, Proveedor.Nombre, CantidadPagos  from Documento inner join PlanPago on Documento.IdPlan = PlanPago.Id "+
-                "inner join Proveedor on Proveedor.Id = Documento.IdProveedor");
+                $"inner join Proveedor on Proveedor.Id = Documento.IdProveedor where IdUsuario={Login.Instance.LoginInfo.Id}");
         }
 
     }
