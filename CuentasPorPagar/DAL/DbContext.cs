@@ -223,16 +223,19 @@ namespace DAL
 
             if (property.PropertyType == typeof(string))
             {
-                if (property.Name== "HashPassword")
+                if (property.Name == "HashPassword")
                     return !string.IsNullOrEmpty(value?.ToString()) ? $"CONVERT(VARBINARY,'{value}')" : "''";
                 return !string.IsNullOrEmpty(value?.ToString()) ? $"'{value}'" : "''";
             }
-                
-            
+
+
             else if (property.PropertyType == typeof(int))
                 return $"{int.Parse(value.ToString())}";
-            else if(property.PropertyType == typeof(byte))
+            else if (property.PropertyType == typeof(byte))
                 return $"{byte.Parse(value.ToString())}";
+
+            else if (property.PropertyType == typeof(decimal))
+                return $"{decimal.Parse(value.ToString())}";
 
             return "''";
         }

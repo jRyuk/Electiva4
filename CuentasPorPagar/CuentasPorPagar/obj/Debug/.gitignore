@@ -13,3 +13,4 @@
 /CuentasPorPagar.Windows.CreateUser.resources
 /CuentasPorPagar.Windows.MainAdmin.resources
 /CuentasPorPagar.Windows.MainContainer.resources
+*.resources

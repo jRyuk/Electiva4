@@ -461,3 +461,9 @@ insert into Roles (Nombre) values ('Tesoreria')
 
 insert into Usuarios (Direccion,DUI, Email, Habilitado, HashPassword,IdRole,NIT,Nombre,Usuario) values
 ('asdsd','asdasddasd','sadsad',1,convert(varbinary,'Declicforever'),1,'ASASAS','admin','admin')
+
+
+insert into PlanPago(Nombre)values('Semanal');
+insert into PlanPago(Nombre)values('Quincenal');
+insert into PlanPago(Nombre)values('Mensual');
+insert into PlanPago(Nombre)values('Trimestral');

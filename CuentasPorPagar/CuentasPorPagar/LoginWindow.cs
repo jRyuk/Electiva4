@@ -65,15 +65,12 @@ namespace CuentasPorPagar
 
             if (result && DAL.BAL.Login.Instance.LoginInfo != null )
             {
-                switch (DAL.BAL.Login.Instance.LoginInfo.IdRole)
-                {
-                    case (int)UserType.Admin:
+               
                         _current = new MainContainer();
                         
                         _current.Show();
-                        this.Hide();
-                        break;
-                }
+                        this.Hide();  
+               
             }
             else
             {
