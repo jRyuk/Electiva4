@@ -14,9 +14,17 @@ namespace CuentasPorPagar.Windows
 {
     public partial class MainContainer : Form
     {
+        Form _loginForm;
+
         public MainContainer()
         {
             InitializeComponent();
+        }
+
+        public MainContainer(Form form)
+        {
+            InitializeComponent();
+            _loginForm = form;
         }
 
         private void MainContainer_Load(object sender, EventArgs e)
@@ -46,6 +54,13 @@ namespace CuentasPorPagar.Windows
             mainDocuments.Show();
         }
 
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _loginForm.Show();
+            this.Close();
+        }
+
+
         private void LoadMenu()
         {
 
@@ -64,6 +79,11 @@ namespace CuentasPorPagar.Windows
                     break;
 
             }
+
+
+            var cerrarSesion = new ToolStripMenuItem("Cerrar sesion", null, cerrarSesionToolStripMenuItem_Click);
+            administrarToolStripMenuItem.DropDownItems.Add(cerrarSesion);
+
         }
 
     }

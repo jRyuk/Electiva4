@@ -22,37 +22,7 @@ namespace CuentasPorPagar
             InitializeComponent();
             DbContext.Instance.Init("default");
 
-            //DbContext.Instance.Update<Usuarios>(new Usuarios()
-            //{
-            //    Id = 1,
-            //    Nombre = "GranTest",
-            //    DUI = "2345678",
-            //    Direccion = "aqui",
-            //    Email = "asdsad",
-            //    Habilitado = 1,
-            //    HashPassword = "admin",
-            //    IdRole = 1,
-            //    NIT = "1234",
-            //    Usuario = "Admin"
-            //});
-
-            //DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Administrador" });
-            /////////*DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Compras" });
-            ////////DbContext.Instance.Add<Roles>(new Roles() { Nombre = "Tesoreria" });*/
-
-            //DbContext.Instance.Add<Usuarios>(new Usuarios()
-            //{
-            //    Nombre = "Test",
-            //    DUI = "sadsadsad",
-            //    Direccion = "asdsad",
-            //    Email = "asdsad",
-            //    Habilitado = 1,
-            //    HashPassword = "Declicforever",
-            //    IdRole = 1,
-            //    NIT = "sadsad",
-            //    Usuario = "Addmin"
-
-            //});
+            
 
         }
 
@@ -66,7 +36,7 @@ namespace CuentasPorPagar
             if (result && DAL.BAL.Login.Instance.LoginInfo != null )
             {
                
-                        _current = new MainContainer();
+                        _current = new MainContainer(this);
                         
                         _current.Show();
                         this.Hide();  
