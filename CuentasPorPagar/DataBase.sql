@@ -126,25 +126,21 @@ GO
 CREATE TRIGGER encriptar on Usuarios AFTER INSERT, UPDATE
 AS
 BEGIN
-IF UPDATE(HashPassword)
+IF UPDATE(HashPassword) or (select count(*) from inserted) > 0 
 	BEGIN
 		UPDATE Usuarios SET HashPassword=EncryptByPassPhrase(N'nirePassword', CONVERT(Nvarchar(100),HashPassword)) WHERE Id=(select Id from inserted)
 	END
 END;
 GO
 
-
-
-
-
-
+Go
 
 Create procedure LoginUser 
 	@User nvarchar(100),
 	@password nvarchar(100)
 	as 
 	begin 
-		select * from Usuarios where Usuario=@User and DECRYPTBYPASSPHRASE(N'nirePassword',HashPassword) = CONVERT(varchar(100),@password)
+		select * from Usuarios where Usuario=@User and CAST(DECRYPTBYPASSPHRASE(N'nirePassword',HashPassword) AS VARCHAR(8000)) = convert(nvarchar(800),@password)
 	end 
 	
 GO 
