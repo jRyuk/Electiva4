@@ -134,7 +134,16 @@ namespace DAL
                 else if (type == typeof(bool)) {
                     value = (bool)value ? (byte)1: (byte)0;
                 }
-                   
+                else if (type == typeof(decimal))
+                {
+                    value = decimal.Parse(value.ToString());
+                }
+                else if (type == typeof(DateTime))
+                {
+                    value = value.ToString();
+                }
+
+
 
                 property.SetValue(element, value, null);
             }

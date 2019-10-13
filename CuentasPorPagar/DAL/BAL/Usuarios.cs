@@ -21,16 +21,23 @@ namespace DAL.BAL
             }
         }
 
-        public override DataTable GetAllUsuarios(string command= null)
+        public override DataTable GeAllFromTable(string command= null)
         {
-            return base.GetAllUsuarios("Select Id, Nombre, DUI,NIT, Email, Habilitado  from usuarios");
+            return base.GeAllFromTable("Select Id, Nombre, DUI,NIT, Email, Habilitado  from usuarios");
         }
 
         public  DataTable GetAllProveedores(string command = null)
         {
-            return base.GetAllUsuarios("select Distinct proveedor.Id, proveedor.Nombre, Proveedor.Direccion, Proveedor.Nombre, " +
+            return base.GeAllFromTable("select Distinct proveedor.Id, proveedor.Nombre, Proveedor.Direccion, Proveedor.Nombre, " +
                 "ContactoProveedor.Nombre  as Contacto,contactoProveedor.Email , Paises.Nombre, Departamentos.Nombre as Departamento from proveedor right join contactoProveedor on proveedor.id = contactoProveedor.IdProveedor " +
 "inner join Paises on Paises.Id = Proveedor.IdPais inner join Departamentos on Departamentos.Id = Proveedor.IdDepartamento inner join Municipios on Municipios.Id = Proveedor.IdMunicipio");
+        }
+
+
+        public DataTable GetAllDocuments(string command = null)
+        {
+            return base.GeAllFromTable("Select Documento.Id, NumeroDocumento as '# Documento', ValorTotal, Proveedor.Nombre, CantidadPagos  from Documento inner join PlanPago on Documento.IdPlan = PlanPago.Id "+
+                "inner join Proveedor on Proveedor.Id = Documento.IdProveedor");
         }
 
     }

@@ -8,7 +8,7 @@ namespace DAL.BAL
 {
     public class BaseLogic
     {
-        public virtual DataTable GetAllUsuarios(string command)
+        public virtual DataTable GeAllFromTable(string command)
         {
             return DbContext.Instance.GetAll(command);
         }

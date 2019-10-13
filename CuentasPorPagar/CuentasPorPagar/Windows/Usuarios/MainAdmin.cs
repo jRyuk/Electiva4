@@ -24,7 +24,7 @@ namespace CuentasPorPagar.Windows
         {
            Text = this.txtTitle.Text = "Usuarios";
 
-            Loaddata(UsuariosBAL.Instance.GetAllUsuarios());
+            Loaddata(UsuariosBAL.Instance.GeAllFromTable());
         }
 
         protected override void btnCrear_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace CuentasPorPagar.Windows
 
             DbContext.Instance.DeleteCommand($"Delete usuarios where Id='{selectedRow}'");
 
-            Loaddata(UsuariosBAL.Instance.GetAllUsuarios());
+            Loaddata(UsuariosBAL.Instance.GeAllFromTable());
         }
 
         protected override void btnActualizar_Click(object sender, EventArgs e)
