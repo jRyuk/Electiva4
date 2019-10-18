@@ -72,6 +72,12 @@
     <Compile Include="Windows\Documentos\MainDocuments.Designer.cs">
       <DependentUpon>MainDocuments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Pagos\GenerarPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Pagos\GenerarPagos.Designer.cs">
+      <DependentUpon>GenerarPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Proveedores\CreateProvider.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Documentos\CreateDocument.resx">
       <DependentUpon>CreateDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Pagos\GenerarPagos.resx">
+      <DependentUpon>GenerarPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
