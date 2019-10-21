@@ -78,6 +78,12 @@
     <Compile Include="Windows\Pagos\GenerarPagos.Designer.cs">
       <DependentUpon>GenerarPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Pagos\MainPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Pagos\MainPagos.Designer.cs">
+      <DependentUpon>MainPagos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Proveedores\CreateProvider.cs">
       <SubType>Form</SubType>
     </Compile>

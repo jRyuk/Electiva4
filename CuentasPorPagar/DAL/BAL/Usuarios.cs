@@ -40,5 +40,11 @@ namespace DAL.BAL
                 $"inner join Proveedor on Proveedor.Id = Documento.IdProveedor where IdUsuario={Login.Instance.LoginInfo.Id}");
         }
 
+
+        public DataTable GetDocumentsToPay()
+        {
+            return base.GeAllFromTable("exec sp_obtenerDocumentos");
+        }
+
     }
 }
