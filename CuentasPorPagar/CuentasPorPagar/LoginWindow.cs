@@ -48,6 +48,11 @@ namespace CuentasPorPagar
             }
         }
 
-        private Form _current; 
+        private Form _current;
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
