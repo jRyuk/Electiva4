@@ -1,4 +1,5 @@
 ﻿using CuentasPorPagar.Windows.Documentos;
+using CuentasPorPagar.Windows.Pagos;
 using CuentasPorPagar.Windows.Proveedores;
 using DAL.BAL;
 using System;
@@ -60,6 +61,13 @@ namespace CuentasPorPagar.Windows
             this.Close();
         }
 
+        private void pagosAdmin(object sender, EventArgs e)
+        {
+            var mainPagos = new MainPagos();
+            mainPagos.MdiParent = this;
+            mainPagos.Show();
+        }
+
 
         private void LoadMenu()
         {
@@ -76,6 +84,10 @@ namespace CuentasPorPagar.Windows
                 case 2:
                     var menuDocumentos = new ToolStripMenuItem("Administrar Documentos", null, documentosToolStripMenuItem_Click);
                     administrarToolStripMenuItem.DropDownItems.Add(menuDocumentos);
+                    break;
+                case 3:
+                    var menuPagos = new ToolStripMenuItem("Administrar pagos", null, pagosAdmin);
+                    administrarToolStripMenuItem.DropDownItems.Add(menuPagos);
                     break;
 
             }

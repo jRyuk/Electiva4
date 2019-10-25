@@ -78,7 +78,8 @@ create table Pagos(
 	IdDocumento int,
 	FechaPago date,
 	IdUsuario int,
-	TipoPago int
+	TipoPago int, 
+	Monto Decimal (15,2)
 )
 Go
 -- Creación de Foreigns Keys
@@ -467,3 +468,13 @@ insert into PlanPago(Nombre)values('Semanal');
 insert into PlanPago(Nombre)values('Quincenal');
 insert into PlanPago(Nombre)values('Mensual');
 insert into PlanPago(Nombre)values('Trimestral');
+go
+create procedure sp_obtenerDocumentos 
+as
+Begin
+		select d.Id, d.NumeroDocumento, prvdor.Nombre, '$' + CONVERT(nchar, d.ValorTotal) as 'Valor total', (select sum(p3.Monto) from Pagos p3 where p3.IdDocumento = d.Id) as 'Monto cancelado'
+		from Documento d 
+		inner join Proveedor prvdor on prvdor.Id = d.IdProveedor 
+		where d.CantidadPagos > (select COUNT (*) from Pagos p where p.IdDocumento = d.Id)
+		and (d.ValorTotal > (select sum(p1.Monto) from Pagos p1 where p1.IdDocumento = d.Id) or (select sum(p2.Monto) from Pagos p2 where p2.IdDocumento = d.Id) is null)
+end
