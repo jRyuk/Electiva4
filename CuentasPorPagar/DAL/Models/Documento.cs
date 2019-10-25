@@ -22,6 +22,7 @@ namespace DAL.Models
         public decimal ValorTotal { get; set; }
 
         public string FechaEmision { get; set; }
+        public string FechaVencimiento { get; set; }
 
         public int IdPlan { get; set; }
 

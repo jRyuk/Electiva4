@@ -16,6 +16,8 @@ namespace CuentasPorPagar.Windows.Documentos
     {
         Action<DataTable> DoAction;
         Documento _documento;
+        private DateTime vencimiento=default(DateTime);
+
         public CreateDocument(Action<DataTable>  action, Documento documento)
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace CuentasPorPagar.Windows.Documentos
             txtNumeroCuotas.Text= _documento.CantidadPagos.ToString();
             txtMonto.Text = _documento.ValorTotal.ToString();
             // document.FechaEmision = dtPickerFecha.Value.ToString("yyyy-MM-dd");
-            cbxPlazo.SelectedValue = _documento.IdPlan;
+          
             txtConcepto.Text = _documento.Concepto  ;
             cbxProveedor.SelectedValue = _documento.IdProveedor;
             
@@ -53,6 +55,7 @@ namespace CuentasPorPagar.Windows.Documentos
             document.CantidadPagos = int.Parse(txtNumeroCuotas.Text);
             document.ValorTotal = decimal.Parse(txtMonto.Text);
             document.FechaEmision = dtPickerFecha.Value.ToString("yyyy-MM-dd");
+            document.FechaVencimiento = vencimiento.ToString("yyyy-MM-dd");
             document.IdPlan = int.Parse(cbxPlazo.SelectedValue.ToString());
             document.Concepto = txtConcepto.Text;
             document.IdProveedor = int.Parse(cbxProveedor.SelectedValue.ToString());
@@ -81,7 +84,52 @@ namespace CuentasPorPagar.Windows.Documentos
             cbxProveedor.DataSource = proveedores;
             cbxPlazo.DataSource = plans;
 
+
+            if(_documento != null)
+            {
+                cbxPlazo.SelectedIndex = _documento.IdPlan - 1;
+            }
           
+        }
+
+        private void dtPickerFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (cbxPlazo.SelectedValue == null) return;
+            calcularFecha();
+        }
+
+        private void calcularFecha()
+        {
+            var plan = int.Parse(cbxPlazo.SelectedValue.ToString());
+
+            DateTime date = dtPickerFecha.Value.Date;
+
+            if (plan == 1)
+            {
+                vencimiento = date.AddDays(7);
+            }
+            else if (plan == 2)
+            {
+                vencimiento = date.AddDays(15);
+            }
+            else if (plan == 3)
+            {
+                vencimiento = date.AddDays(30);
+            }
+            else if (plan == 4)
+            {
+                vencimiento = date.AddDays(90);
+            }
+
+            if (vencimiento != default(DateTime))
+                lblVencimiento.Text = vencimiento.ToShortDateString();
+        }
+
+        private void cbxPlazo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxPlazo.SelectedIndex < 0) return;
+            calcularFecha();
         }
     }
 }

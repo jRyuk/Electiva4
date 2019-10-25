@@ -51,6 +51,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
+            this.lblEndDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -243,11 +244,20 @@
             this.textBox9.Size = new System.Drawing.Size(129, 20);
             this.textBox9.TabIndex = 22;
             // 
+            // lblEndDate
+            // 
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Location = new System.Drawing.Point(448, 139);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(0, 13);
+            this.lblEndDate.TabIndex = 23;
+            // 
             // GenerarPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 478);
+            this.Controls.Add(this.lblEndDate);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboBox2);
@@ -303,5 +313,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label lblEndDate;
     }
 }
