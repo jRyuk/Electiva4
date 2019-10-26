@@ -136,6 +136,9 @@
     <EmbeddedResource Include="Windows\Pagos\GenerarPagos.resx">
       <DependentUpon>GenerarPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Pagos\MainPagos.resx">
+      <DependentUpon>MainPagos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
     </EmbeddedResource>

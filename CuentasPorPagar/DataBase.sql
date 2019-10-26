@@ -43,7 +43,7 @@ create table Proveedor(
 	Direccion nvarchar(200),
 	NumeroRegistro nvarchar(25),
 	NIT nvarchar(17),
-	RazonSocial nvarchar(15)
+	RazonSocial nvarchar(75)
 )
 create table ContactoProveedor(
 	Id int primary key identity(1,1),

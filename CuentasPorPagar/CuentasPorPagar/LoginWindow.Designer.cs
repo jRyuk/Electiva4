@@ -42,7 +42,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(170, 20);
             this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.Text = "Addmin";
+            this.txtUsuario.Text = "Admin";
             // 
             // txtPassword
             // 

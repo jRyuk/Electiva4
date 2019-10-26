@@ -106,6 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(270, 100);
             this.label4.Name = "label4";

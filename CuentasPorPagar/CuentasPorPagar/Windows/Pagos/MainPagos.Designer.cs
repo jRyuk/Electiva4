@@ -28,7 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Size = new System.Drawing.Size(159, 30);
+            this.txtTitle.Text = "Documentos";
+            // 
+            // MainPagos
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.Name = "MainPagos";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
