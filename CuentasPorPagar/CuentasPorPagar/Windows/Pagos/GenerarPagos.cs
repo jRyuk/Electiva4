@@ -30,5 +30,10 @@ namespace CuentasPorPagar.Windows.Pagos
         {
 
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
