@@ -54,6 +54,12 @@ namespace CuentasPorPagar.Windows.Pagos
 
             DbContext.Instance.Add(pago);
             _action.Invoke();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

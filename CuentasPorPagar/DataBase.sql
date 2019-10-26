@@ -484,7 +484,7 @@ Begin
 		as 'Valor actual'
 		from Documento d 
 		inner join Proveedor prvdor on prvdor.Id = d.IdProveedor 
-		where d.CantidadPagos > (select COUNT (*) from Pagos p where p.IdDocumento = d.Id)
+		where d.CantidadPagos >= (select COUNT (*) from Pagos p where p.IdDocumento = d.Id)
 		and (d.ValorTotal > (select sum(p1.Monto) from Pagos p1 where p1.IdDocumento = d.Id) or (select sum(p2.Monto) from Pagos p2 where p2.IdDocumento = d.Id) is null)
 
 end
