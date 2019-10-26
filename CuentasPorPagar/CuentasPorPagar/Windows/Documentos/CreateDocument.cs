@@ -140,5 +140,10 @@ namespace CuentasPorPagar.Windows.Documentos
                 calcularFecha();
             }
         }
+
+        private void txtTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

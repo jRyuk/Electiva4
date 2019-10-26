@@ -1,4 +1,5 @@
-﻿using DAL.BAL;
+﻿using DAL;
+using DAL.BAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,9 @@ namespace CuentasPorPagar.Windows.Pagos
         protected override void btnCrear_Click(object sender, EventArgs e)
         {
             base.btnCrear_Click(sender, e);
+
+            var selectedRow = dataGridView1.SelectedRows[0].Cells[0].Value;
+            var documento = DbContext.Instance.Find<DAL.Models.Pagos>($"select * from Documento where Id={selectedRow}");
 
             var pago = new GenerarPagos();
 

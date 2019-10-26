@@ -109,6 +109,7 @@
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(196, 26);
             this.txtTipo.TabIndex = 6;
+            this.txtTipo.SelectedIndexChanged += new System.EventHandler(this.txtTipo_SelectedIndexChanged);
             // 
             // label5
             // 
