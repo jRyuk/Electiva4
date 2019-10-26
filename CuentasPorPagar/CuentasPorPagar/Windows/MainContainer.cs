@@ -98,5 +98,11 @@ namespace CuentasPorPagar.Windows
 
         }
 
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe acercaDe = new AcercaDe();
+            acercaDe.MdiParent = this;
+            acercaDe.Show();
+        }
     }
 }
