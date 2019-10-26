@@ -30,30 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerarPagos));
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
+            this.txtConcepto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtPago = new System.Windows.Forms.TextBox();
+            this.txtConeptoPago = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtReferencia = new System.Windows.Forms.TextBox();
             this.lblEndDate = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lblVencimiento = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtTipoDoc = new System.Windows.Forms.TextBox();
+            this.txtTipo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -66,14 +65,14 @@
             this.label1.Size = new System.Drawing.Size(131, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "No. de Documento: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtN
             // 
-            this.textBox1.Location = new System.Drawing.Point(159, 62);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtN.Enabled = false;
+            this.txtN.Location = new System.Drawing.Point(159, 62);
+            this.txtN.Name = "txtN";
+            this.txtN.Size = new System.Drawing.Size(267, 20);
+            this.txtN.TabIndex = 1;
             // 
             // label2
             // 
@@ -85,15 +84,6 @@
             this.label2.Size = new System.Drawing.Size(136, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tipo de Documento: ";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(159, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
             // 
             // label3
             // 
@@ -125,26 +115,29 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Concepto: ";
             // 
-            // textBox2
+            // txtFecha
             // 
-            this.textBox2.Location = new System.Drawing.Point(153, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtFecha.Enabled = false;
+            this.txtFecha.Location = new System.Drawing.Point(159, 162);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(129, 20);
+            this.txtFecha.TabIndex = 7;
             // 
-            // textBox3
+            // txtProveedor
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(267, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtProveedor.Enabled = false;
+            this.txtProveedor.Location = new System.Drawing.Point(159, 208);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.Size = new System.Drawing.Size(267, 20);
+            this.txtProveedor.TabIndex = 8;
             // 
-            // textBox4
+            // txtConcepto
             // 
-            this.textBox4.Location = new System.Drawing.Point(132, 254);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(614, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtConcepto.Enabled = false;
+            this.txtConcepto.Location = new System.Drawing.Point(159, 255);
+            this.txtConcepto.Name = "txtConcepto";
+            this.txtConcepto.Size = new System.Drawing.Size(614, 20);
+            this.txtConcepto.TabIndex = 9;
             // 
             // label6
             // 
@@ -155,71 +148,36 @@
             this.label6.Size = new System.Drawing.Size(152, 18);
             this.label6.TabIndex = 10;
             this.label6.Text = "Fecha de Vencimiento: ";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(22, 307);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 18);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Monto de Documento:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(176, 307);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(129, 20);
-            this.textBox5.TabIndex = 12;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(329, 310);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 18);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Saldo Pendiente:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(449, 307);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(129, 20);
-            this.textBox6.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(22, 386);
+            this.label9.Location = new System.Drawing.Point(20, 323);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 18);
             this.label9.TabIndex = 15;
             this.label9.Text = "Monto a pagar:";
             // 
-            // textBox7
+            // txtPago
             // 
-            this.textBox7.Location = new System.Drawing.Point(124, 383);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(129, 20);
-            this.textBox7.TabIndex = 16;
+            this.txtPago.Location = new System.Drawing.Point(159, 320);
+            this.txtPago.Name = "txtPago";
+            this.txtPago.Size = new System.Drawing.Size(234, 20);
+            this.txtPago.TabIndex = 16;
             // 
-            // textBox8
+            // txtConeptoPago
             // 
-            this.textBox8.Location = new System.Drawing.Point(151, 437);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(595, 20);
-            this.textBox8.TabIndex = 17;
+            this.txtConeptoPago.Location = new System.Drawing.Point(159, 414);
+            this.txtConeptoPago.Name = "txtConeptoPago";
+            this.txtConeptoPago.Size = new System.Drawing.Size(614, 20);
+            this.txtConeptoPago.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label10.Location = new System.Drawing.Point(22, 437);
+            this.label10.Location = new System.Drawing.Point(20, 414);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(123, 18);
             this.label10.TabIndex = 18;
@@ -229,36 +187,28 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(278, 386);
+            this.label11.Location = new System.Drawing.Point(399, 322);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 18);
             this.label11.TabIndex = 19;
             this.label11.Text = "Pagado con:";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(352, 383);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 20;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold);
-            this.label12.Location = new System.Drawing.Point(496, 386);
+            this.label12.Location = new System.Drawing.Point(23, 371);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 18);
+            this.label12.Size = new System.Drawing.Size(79, 18);
             this.label12.TabIndex = 21;
-            this.label12.Text = "No. de cheque:";
+            this.label12.Text = "Referencia:";
             // 
-            // textBox9
+            // txtReferencia
             // 
-            this.textBox9.Location = new System.Drawing.Point(604, 386);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(129, 20);
-            this.textBox9.TabIndex = 22;
+            this.txtReferencia.Location = new System.Drawing.Point(159, 369);
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Size = new System.Drawing.Size(614, 20);
+            this.txtReferencia.TabIndex = 22;
             // 
             // lblEndDate
             // 
@@ -277,7 +227,51 @@
             this.label13.Size = new System.Drawing.Size(190, 29);
             this.label13.TabIndex = 24;
             this.label13.Text = "Registro de Pagos";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // lblVencimiento
+            // 
+            this.lblVencimiento.AutoSize = true;
+            this.lblVencimiento.Location = new System.Drawing.Point(487, 168);
+            this.lblVencimiento.Name = "lblVencimiento";
+            this.lblVencimiento.Size = new System.Drawing.Size(0, 13);
+            this.lblVencimiento.TabIndex = 25;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(539, 462);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(661, 462);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 23);
+            this.button2.TabIndex = 27;
+            this.button2.Text = "Registrar pago";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtTipoDoc
+            // 
+            this.txtTipoDoc.Enabled = false;
+            this.txtTipoDoc.Location = new System.Drawing.Point(159, 109);
+            this.txtTipoDoc.Name = "txtTipoDoc";
+            this.txtTipoDoc.Size = new System.Drawing.Size(267, 20);
+            this.txtTipoDoc.TabIndex = 28;
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Enabled = false;
+            this.txtTipo.Location = new System.Drawing.Point(487, 323);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(286, 20);
+            this.txtTipo.TabIndex = 29;
             // 
             // GenerarPagos
             // 
@@ -285,30 +279,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 497);
+            this.Controls.Add(this.txtTipo);
+            this.Controls.Add(this.txtTipoDoc);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblVencimiento);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.lblEndDate);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.txtReferencia);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtConeptoPago);
+            this.Controls.Add(this.txtPago);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtConcepto);
+            this.Controls.Add(this.txtProveedor);
+            this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtN);
             this.Controls.Add(this.label1);
             this.Name = "GenerarPagos";
             this.Text = "GenerarPagos";
@@ -320,29 +313,28 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtN;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.TextBox txtProveedor;
+        private System.Windows.Forms.TextBox txtConcepto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPago;
+        private System.Windows.Forms.TextBox txtConeptoPago;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.Label lblEndDate;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblVencimiento;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtTipoDoc;
+        private System.Windows.Forms.TextBox txtTipo;
     }
 }
