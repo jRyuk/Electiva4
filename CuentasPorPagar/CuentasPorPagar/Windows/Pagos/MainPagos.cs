@@ -11,11 +11,31 @@ namespace CuentasPorPagar.Windows.Pagos
 {
     public partial class MainPagos : CuentasPorPagar.Windows.BaseWindow
     {
-        public MainPagos()
+        Form _form;
+        public MainPagos(Form form)
         {
             InitializeComponent();
 
             Loaddata(UsuariosBAL.Instance.GetDocumentsToPay());
+
+            this.btnCrear.Text = "Pago";
+            this.btnActualizar.Visible = btnEliminar.Visible = false;
+            _form = form;
+        }
+
+       public MainPagos()
+        {
+            InitializeComponent();
+        }
+
+        protected override void btnCrear_Click(object sender, EventArgs e)
+        {
+            base.btnCrear_Click(sender, e);
+
+            var pago = new GenerarPagos();
+
+            pago.MdiParent = _form;
+            pago.Show();
         }
     }
 }

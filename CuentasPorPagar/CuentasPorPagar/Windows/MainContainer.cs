@@ -63,7 +63,7 @@ namespace CuentasPorPagar.Windows
 
         private void pagosAdmin(object sender, EventArgs e)
         {
-            var mainPagos = new MainPagos();
+            var mainPagos = new MainPagos(this);
             mainPagos.MdiParent = this;
             mainPagos.Show();
         }

@@ -126,9 +126,9 @@
 
         #endregion
         protected System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnCrear;
+        protected System.Windows.Forms.Button btnActualizar;
+        protected System.Windows.Forms.Button btnEliminar;
+        protected System.Windows.Forms.Button btnCrear;
         protected System.Windows.Forms.Label txtTitle;
     }
 }

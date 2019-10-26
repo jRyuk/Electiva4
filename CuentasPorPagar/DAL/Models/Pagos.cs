@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DAL.Models
 {
-    class Pagos
+    public class Pagos
     {
         public int IdDocumento { get; set; }
         public int IdUsuario { get; set; }

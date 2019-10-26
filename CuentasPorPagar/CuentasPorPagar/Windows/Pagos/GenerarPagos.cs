@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,9 +12,12 @@ namespace CuentasPorPagar.Windows.Pagos
 {
     public partial class GenerarPagos : Form
     {
-        public GenerarPagos()
+        Documento _documento;
+
+        public GenerarPagos(Documento documento)
         {
             InitializeComponent();
+            _documento = documento;
         }
 
         private void label1_Click(object sender, EventArgs e)

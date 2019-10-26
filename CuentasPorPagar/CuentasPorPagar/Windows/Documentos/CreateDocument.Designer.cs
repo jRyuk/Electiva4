@@ -170,6 +170,7 @@
             this.txtNumeroCuotas.Name = "txtNumeroCuotas";
             this.txtNumeroCuotas.Size = new System.Drawing.Size(199, 26);
             this.txtNumeroCuotas.TabIndex = 13;
+            this.txtNumeroCuotas.TextChanged += new System.EventHandler(this.txtNumeroCuotas_TextChanged);
             // 
             // label8
             // 

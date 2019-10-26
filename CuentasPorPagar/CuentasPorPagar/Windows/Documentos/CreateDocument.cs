@@ -16,6 +16,7 @@ namespace CuentasPorPagar.Windows.Documentos
     {
         Action<DataTable> DoAction;
         Documento _documento;
+        public int pagos;
         private DateTime vencimiento=default(DateTime);
 
         public CreateDocument(Action<DataTable>  action, Documento documento)
@@ -95,8 +96,7 @@ namespace CuentasPorPagar.Windows.Documentos
         private void dtPickerFecha_ValueChanged(object sender, EventArgs e)
         {
 
-            if (cbxPlazo.SelectedValue == null) return;
-            calcularFecha();
+          
         }
 
         private void calcularFecha()
@@ -107,19 +107,19 @@ namespace CuentasPorPagar.Windows.Documentos
 
             if (plan == 1)
             {
-                vencimiento = date.AddDays(7);
+                vencimiento = date.AddDays(7*pagos);
             }
             else if (plan == 2)
             {
-                vencimiento = date.AddDays(15);
+                vencimiento = date.AddDays(15*pagos);
             }
             else if (plan == 3)
             {
-                vencimiento = date.AddDays(30);
+                vencimiento = date.AddDays(30*pagos);
             }
             else if (plan == 4)
             {
-                vencimiento = date.AddDays(90);
+                vencimiento = date.AddDays(90*pagos);
             }
 
             if (vencimiento != default(DateTime))
@@ -128,8 +128,17 @@ namespace CuentasPorPagar.Windows.Documentos
 
         private void cbxPlazo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxPlazo.SelectedIndex < 0) return;
-            calcularFecha();
+          
+        }
+
+        private void txtNumeroCuotas_TextChanged(object sender, EventArgs e)
+        {
+            var text = txtNumeroCuotas.Text;
+
+            if (int.TryParse(text, out pagos))
+            {
+                calcularFecha();
+            }
         }
     }
 }
