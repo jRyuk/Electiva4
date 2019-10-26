@@ -67,6 +67,7 @@ create table Documento(
 	CantidadPagos int,
 	ValorTotal decimal(15,2),
 	FechaEmision date,
+	FechaVencimiento date,
 	IdPlan int,
 	Plazo nvarchar(10),
 	Concepto nvarchar(250),
@@ -78,8 +79,10 @@ create table Pagos(
 	IdDocumento int,
 	FechaPago date,
 	IdUsuario int,
-	TipoPago int, 
-	Monto Decimal (15,2)
+	TipoPago nvarchar(100), 
+	Monto Decimal (15,2), 
+	Referencia nvarchar(100),
+	ConceptoPago nvarchar(100)
 )
 Go
 -- Creación de Foreigns Keys
@@ -472,9 +475,16 @@ go
 create procedure sp_obtenerDocumentos 
 as
 Begin
-		select d.Id, d.NumeroDocumento, prvdor.Nombre, '$' + CONVERT(nchar, d.ValorTotal) as 'Valor total', (select sum(p3.Monto) from Pagos p3 where p3.IdDocumento = d.Id) as 'Monto cancelado'
+		select d.Id, d.NumeroDocumento, prvdor.Nombre, '$' + CONVERT(nchar, d.ValorTotal) as 'Valor total', '$'+ convert(Nvarchar,(select sum(p3.Monto) from Pagos p3 where p3.IdDocumento = d.Id)) as 'Monto cancelado',
+		'$' + CONVERT(Nvarchar, d.ValorTotal -
+		case when (select sum(p4.Monto) from Pagos p4 ) is null then
+		0
+		else  (select sum(p4.Monto) from Pagos p4 )
+		end)
+		as 'Valor actual'
 		from Documento d 
 		inner join Proveedor prvdor on prvdor.Id = d.IdProveedor 
 		where d.CantidadPagos > (select COUNT (*) from Pagos p where p.IdDocumento = d.Id)
 		and (d.ValorTotal > (select sum(p1.Monto) from Pagos p1 where p1.IdDocumento = d.Id) or (select sum(p2.Monto) from Pagos p2 where p2.IdDocumento = d.Id) is null)
+
 end
