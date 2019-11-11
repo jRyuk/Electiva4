@@ -1,5 +1,6 @@
 ﻿using CuentasPorPagar.Windows.Documentos;
 using CuentasPorPagar.Windows.Pagos;
+using CuentasPorPagar.Windows.Paises;
 using CuentasPorPagar.Windows.Proveedores;
 using DAL.BAL;
 using System;
@@ -48,6 +49,13 @@ namespace CuentasPorPagar.Windows
             mainAdmin.Show();
         }
 
+        private void paisesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mainAdmin = new MainPaises(this);
+            mainAdmin.MdiParent = this;
+            mainAdmin.Show();
+        }
+
         private void documentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var mainDocuments = new  MainDocuments(this);
@@ -80,6 +88,10 @@ namespace CuentasPorPagar.Windows
                     administrarToolStripMenuItem.DropDownItems.Add(menuUsuarios);
                     var menuProveedores = new ToolStripMenuItem("Administrar proveedores", null, proveedoresToolStripMenuItem_Click);
                     administrarToolStripMenuItem.DropDownItems.Add(menuProveedores);
+
+                    var menuPaises = new ToolStripMenuItem("Administrar paises", null, paisesToolStripMenuItem_Click);
+                    administrarToolStripMenuItem.DropDownItems.Add(menuPaises);
+
                     break;
                 case 2:
                     var menuDocumentos = new ToolStripMenuItem("Administrar Documentos", null, documentosToolStripMenuItem_Click);
@@ -100,9 +112,9 @@ namespace CuentasPorPagar.Windows
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AcercaDe acercaDe = new AcercaDe();
-            acercaDe.MdiParent = this;
-            acercaDe.Show();
+            //AcercaDe acercaDe = new AcercaDe();
+            //acercaDe.MdiParent = this;
+            //acercaDe.Show();
         }
     }
 }

@@ -54,12 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\Utils.cs" />
-    <Compile Include="Windows\AcercaDe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\AcercaDe.Designer.cs">
-      <DependentUpon>AcercaDe.cs</DependentUpon>
-    </Compile>
     <Compile Include="Windows\BaseWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +83,18 @@
     </Compile>
     <Compile Include="Windows\Pagos\MainPagos.Designer.cs">
       <DependentUpon>MainPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Paises\CrearPaises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\CrearPaises.Designer.cs">
+      <DependentUpon>CrearPaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Paises\MainPaises.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\MainPaises.Designer.cs">
+      <DependentUpon>MainPaises.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Proveedores\CreateProvider.cs">
       <SubType>Form</SubType>
@@ -133,9 +139,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Windows\AcercaDe.resx">
-      <DependentUpon>AcercaDe.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\BaseWindow.resx">
       <DependentUpon>BaseWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Pagos\MainPagos.resx">
       <DependentUpon>MainPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\CrearPaises.resx">
+      <DependentUpon>CrearPaises.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
@@ -180,5 +186,6 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

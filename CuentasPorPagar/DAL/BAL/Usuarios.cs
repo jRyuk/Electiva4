@@ -41,6 +41,12 @@ namespace DAL.BAL
         }
 
 
+        public DataTable GetAllPaises()
+        {
+
+            return base.GeAllFromTable("select * from paises");
+        }
+
         public DataTable GetDocumentsToPay()
         {
             return base.GeAllFromTable("exec sp_obtenerDocumentos");

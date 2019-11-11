@@ -49,6 +49,7 @@
     <Compile Include="Models\Departamentos.cs" />
     <Compile Include="Models\Documento.cs" />
     <Compile Include="Models\Pagos.cs" />
+    <Compile Include="Models\Paises.cs" />
     <Compile Include="Models\Proveedor.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Usuarios.cs" />
