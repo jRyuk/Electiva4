@@ -25,16 +25,12 @@ namespace CuentasPorPagarWeb
             {
                 lblMessage.Text = "Usuario Valido";
                 /*
-                _current = new MainContainer(this);
-
-                _current.Show();
-                this.Hide();
+                poner a donde redireccionara
                 */
             }
             else
             {
                 lblMessage.Text = "Usuario NO Valido";
-                //DAL.Utils.Extensions.ShowMessage("Credenciales invalidas");
             }
         }
 
