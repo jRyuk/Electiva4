@@ -13,7 +13,31 @@ namespace CuentasPorPagarWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             DbContext.Instance.Init("default");
-            var result = DAL.BAL.Login.Instance.LoginUser("admin","Declicforever");
+            
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            String usuario = txtUser.Text;
+            String contra = txtPass.Text;
+            var result = DAL.BAL.Login.Instance.LoginUser(usuario,contra);
+            if (result && DAL.BAL.Login.Instance.LoginInfo != null)
+            {
+                lblMessage.Text = "Usuario Valido";
+                /*
+                _current = new MainContainer(this);
+
+                _current.Show();
+                this.Hide();
+                */
+            }
+            else
+            {
+                lblMessage.Text = "Usuario NO Valido";
+                //DAL.Utils.Extensions.ShowMessage("Credenciales invalidas");
+            }
+        }
+
+
     }
 }

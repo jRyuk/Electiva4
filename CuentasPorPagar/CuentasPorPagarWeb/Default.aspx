@@ -5,12 +5,31 @@
 
 
     <div class="jumbotron">
-        <p>Usuario:<asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
+    <table style="width: 100%">
+        <tr>
+            <td style="text-align:center">
+                <p>Usuario:<asp:TextBox ID="txtUser" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUser" ErrorMessage="* Campo obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
         </p>
-        <p>Password:<asp:TextBox ID="txtPass" runat="server"></asp:TextBox>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center"><p>Password:<asp:TextBox ID="txtPass" runat="server" TextMode="Password"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass" ErrorMessage="* Campo obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+        </p></td>
+        </tr>
+        <tr>
+            <td style="text-align:center"><p><asp:Button ID="btnLogin" runat="server" OnClick="Button1_Click" Text="Ingresar" />
         </p>
-        <p><asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        </p>
+                <p aria-hidden="False">
+                    <asp:Label ID="lblMessage" runat="server" ForeColor="Red"></asp:Label>
+        </p></td>
+        </tr>
+    </table>
+        
+        
+        
+        
     </div>
 
    
