@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace CuentasPorPagarWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DbContext.Instance.Init("default");
+            var result = DAL.BAL.Login.Instance.LoginUser("admin","Declicforever");
         }
     }
 }
