@@ -52,6 +52,11 @@ namespace DAL.BAL
             return base.GeAllFromTable($"Select * from Departamentos where IdPais={idPais}");
         }
 
+        public DataTable ObtenerMunicipios(int idDep)
+        {
+            return base.GeAllFromTable($"Select * from Municipios where IdDepartamento={idDep}");
+        }
+
         public DataTable GetDocumentsToPay()
         {
             return base.GeAllFromTable("exec sp_obtenerDocumentos");

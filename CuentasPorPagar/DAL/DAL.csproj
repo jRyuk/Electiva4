@@ -48,6 +48,7 @@
     <Compile Include="Models\ContactoProveedor.cs" />
     <Compile Include="Models\Departamentos.cs" />
     <Compile Include="Models\Documento.cs" />
+    <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\Pagos.cs" />
     <Compile Include="Models\Paises.cs" />
     <Compile Include="Models\Proveedor.cs" />

@@ -90,6 +90,12 @@
     <Compile Include="Windows\Paises\CrearDepartamento.Designer.cs">
       <DependentUpon>CrearDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Paises\CrearMunicipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\CrearMunicipio.Designer.cs">
+      <DependentUpon>CrearMunicipio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Paises\CrearPaises.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Windows\Paises\MainPaises.Designer.cs">
       <DependentUpon>MainPaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Paises\MunicipiosLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\MunicipiosLista.Designer.cs">
+      <DependentUpon>MunicipiosLista.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Proveedores\CreateProvider.cs">
       <SubType>Form</SubType>
@@ -169,11 +181,17 @@
     <EmbeddedResource Include="Windows\Paises\CrearDepartamento.resx">
       <DependentUpon>CrearDepartamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\CrearMunicipio.resx">
+      <DependentUpon>CrearMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Paises\CrearPaises.resx">
       <DependentUpon>CrearPaises.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Paises\MainPaises.resx">
       <DependentUpon>MainPaises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\MunicipiosLista.resx">
+      <DependentUpon>MunicipiosLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
