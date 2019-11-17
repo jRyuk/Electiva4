@@ -187,6 +187,9 @@
     <EmbeddedResource Include="Windows\Paises\CrearPaises.resx">
       <DependentUpon>CrearPaises.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\ListarDepartamentos.resx">
+      <DependentUpon>ListarDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Paises\MainPaises.resx">
       <DependentUpon>MainPaises.cs</DependentUpon>
     </EmbeddedResource>
