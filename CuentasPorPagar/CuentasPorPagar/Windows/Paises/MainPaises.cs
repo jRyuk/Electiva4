@@ -37,5 +37,18 @@ namespace CuentasPorPagar.Windows.Paises
             crear.MdiParent = parent;
             crear.Show();
         }
+
+
+        protected override void btnActualizar_Click(object sender, EventArgs e)
+        {
+            base.btnActualizar_Click(sender, e);
+
+            var selectedRow = dataGridView1.SelectedRows[0].Cells[0].Value;
+
+            ListarDepartamentos departamentos = new ListarDepartamentos(selectedRow.ToString(),parent);
+            departamentos.MdiParent = parent;
+            departamentos.Show();
+
+        }
     }
 }

@@ -84,11 +84,23 @@
     <Compile Include="Windows\Pagos\MainPagos.Designer.cs">
       <DependentUpon>MainPagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Paises\CrearDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\CrearDepartamento.Designer.cs">
+      <DependentUpon>CrearDepartamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Paises\CrearPaises.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\Paises\CrearPaises.Designer.cs">
       <DependentUpon>CrearPaises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Paises\ListarDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Paises\ListarDepartamentos.Designer.cs">
+      <DependentUpon>ListarDepartamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Paises\MainPaises.cs">
       <SubType>Form</SubType>
@@ -145,14 +157,23 @@
     <EmbeddedResource Include="Windows\Documentos\CreateDocument.resx">
       <DependentUpon>CreateDocument.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Documentos\MainDocuments.resx">
+      <DependentUpon>MainDocuments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Pagos\GenerarPagos.resx">
       <DependentUpon>GenerarPagos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Pagos\MainPagos.resx">
       <DependentUpon>MainPagos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\CrearDepartamento.resx">
+      <DependentUpon>CrearDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Paises\CrearPaises.resx">
       <DependentUpon>CrearPaises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Paises\MainPaises.resx">
+      <DependentUpon>MainPaises.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
