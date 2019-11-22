@@ -488,3 +488,45 @@ Begin
 		and (d.ValorTotal > (select sum(p1.Monto) from Pagos p1 where p1.IdDocumento = d.Id) or (select sum(p2.Monto) from Pagos p2 where p2.IdDocumento = d.Id) is null)
 
 end
+
+
+-- Reportes
+create procedure ReporteDocumentos
+as
+begin 
+	--Select * from documento
+Select NumeroDocumento as 'N# Documento', 
+ case 
+	when AplicaIVA = 1
+	then 'Si'
+	when AplicaIVA = 0
+	then 
+	'No'
+	end 
+	as 'Incluye IVA',
+
+	ValorTotal as 'Valor documento',
+	(
+	
+	select  convert(Nvarchar,(select sum(p3.Monto) from Pagos p3 where p3.IdDocumento = d.Id)) as 'Monto cancelado'
+		
+		from Documento d 
+		inner join Proveedor prvdor on prvdor.Id = d.IdProveedor 
+		where 
+	
+		 d.Id = Documento.Id
+
+	) as 'Total Pagado', 
+	FechaEmision as 'Fecha de emision',
+	Concepto, 
+	Proveedor.Nombre,
+	Paises.Nombre as 'Pais',
+	Departamentos.Nombre as 'Departamento',
+	Municipios.Nombre as 'Municipio'
+from Documento 
+inner join Proveedor on Documento.IdProveedor = Proveedor.Id
+inner join Paises on Proveedor.IdPais = Paises.Id
+inner join Departamentos on Departamentos.Id = Proveedor.IdDepartamento
+inner join Municipios on Municipios.Id = Proveedor.IdMunicipio;
+
+end 
