@@ -108,6 +108,8 @@ namespace CuentasPorPagar.Windows
             var cerrarSesion = new ToolStripMenuItem("Cerrar sesion", null, cerrarSesionToolStripMenuItem_Click);
             administrarToolStripMenuItem.DropDownItems.Add(cerrarSesion);
 
+
+
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,6 +117,13 @@ namespace CuentasPorPagar.Windows
             //AcercaDe acercaDe = new AcercaDe();
             //acercaDe.MdiParent = this;
             //acercaDe.Show();
+        }
+
+        private void allDocumentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mainPagos = new Reportes.ReporteDocumentos();
+            mainPagos.MdiParent = this;
+            mainPagos.Show();
         }
     }
 }

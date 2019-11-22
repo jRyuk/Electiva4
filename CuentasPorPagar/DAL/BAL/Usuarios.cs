@@ -62,5 +62,11 @@ namespace DAL.BAL
             return base.GeAllFromTable("exec sp_obtenerDocumentos");
         }
 
+
+        public DataTable ObtenerReporteDocumentos()
+        {
+            return base.GeAllFromTable("exec ReporteDocumentos");
+        }
+
     }
 }

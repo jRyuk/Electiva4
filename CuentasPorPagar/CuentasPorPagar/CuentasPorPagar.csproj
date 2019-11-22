@@ -33,6 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -126,6 +131,12 @@
     <Compile Include="Windows\Proveedores\CreateProvider.Designer.cs">
       <DependentUpon>CreateProvider.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\Reportes\ReporteDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Reportes\ReporteDocumentos.Designer.cs">
+      <DependentUpon>ReporteDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Usuarios\CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +210,9 @@
     <EmbeddedResource Include="Windows\Proveedores\CreateProvider.resx">
       <DependentUpon>CreateProvider.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Reportes\ReporteDocumentos.resx">
+      <DependentUpon>ReporteDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Usuarios\CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +226,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
