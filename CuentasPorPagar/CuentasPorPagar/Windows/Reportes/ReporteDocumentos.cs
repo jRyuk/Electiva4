@@ -77,6 +77,14 @@ namespace CuentasPorPagar.Windows.Reportes
             var folderPath = choofdlog.SelectedPath;
 
 
+            iTextSharp.text.Font titleFont = FontFactory.GetFont("Arial", 32);
+            iTextSharp.text.Font regularFont = FontFactory.GetFont("Arial", 36);
+            Paragraph title;
+            Paragraph text;
+            title = new Paragraph("Reporte de documentos", titleFont);
+            title.Alignment = Element.ALIGN_CENTER;
+            title.SpacingAfter = 20;
+
             PdfPTable pdfTable = new PdfPTable(dataGridView1.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;
             pdfTable.WidthPercentage = 90;
@@ -111,6 +119,7 @@ namespace CuentasPorPagar.Windows.Reportes
                 Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
                 PdfWriter.GetInstance(pdfDoc, stream);
                 pdfDoc.Open();
+                pdfDoc.Add(title);
                 pdfDoc.Add(pdfTable);
                 pdfDoc.Close();
                 stream.Close();
