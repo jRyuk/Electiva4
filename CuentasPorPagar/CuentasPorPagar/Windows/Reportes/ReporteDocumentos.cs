@@ -1,8 +1,7 @@
 ﻿using DAL;
 using DAL.BAL;
 using iTextSharp.text;
-using iTextSharp.text.pdf;
-using Microsoft.Office.Interop.Excel;
+using iTextSharp.text.pdf;              
 using System;
 using System.IO;
 using System.Linq;
