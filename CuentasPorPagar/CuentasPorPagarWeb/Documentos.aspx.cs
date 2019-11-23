@@ -5,6 +5,7 @@ using iTextSharp.text.html.simpleparser;
 using iTextSharp.text.pdf;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -86,12 +87,23 @@ namespace CuentasPorPagarWeb
                 //Resize image depend upon your need   
                
                 Font font8 = FontFactory.GetFont("ARIAL", 7);
+                var boldFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 7);
                 var dt = UsuariosBAL.Instance.ObtenerReporteDocumentos();
                 if (dt != null)
                 {
                     //Craete instance of the pdf table and set the number of column in that table  
                     PdfPTable PdfTable = new PdfPTable(dt.Columns.Count);
                     PdfPCell PdfPCell = null;
+
+                    foreach (DataColumn column in dt.Columns)
+                    {
+
+                        PdfPCell = new PdfPCell(new Phrase(new Chunk(column.ColumnName, boldFont)));
+                        PdfTable.AddCell(PdfPCell);
+
+                    }
+
+
                     for (int rows = 0; rows < dt.Rows.Count; rows++)
                     {
                         for (int column = 0; column < dt.Columns.Count; column++)
