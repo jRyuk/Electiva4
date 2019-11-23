@@ -14,4 +14,11 @@
         <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>
+     <script type="text/javascript">
+            $(document).ready(function () {
+                $("#liInicio").click(function (e) {
+                    e.preventDefault();
+                })
+            });
+        </script>
 </asp:Content>

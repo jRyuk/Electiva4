@@ -4,4 +4,12 @@
     <h2><%: Title %>.</h2>
     <h3>Your application description page.</h3>
     <p>Use this area to provide additional information.</p>
+
+     <script type="text/javascript">
+            $(document).ready(function () {
+                $("#liInicio").click(function (e) {
+                    e.preventDefault();
+                })
+            });
+        </script>
 </asp:Content>

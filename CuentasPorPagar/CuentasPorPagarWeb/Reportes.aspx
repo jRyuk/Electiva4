@@ -12,9 +12,7 @@
               Todos los documentos
           </button>
 
-          <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-          <button type="button" class="list-group-item list-group-item-action">Estado por proveedor</button>
-          <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+          <button id="docProveedor" type="button" class="list-group-item list-group-item-action">Documentos por proveedor</button>
         </div>
     </div>
     <script type="text/javascript">
@@ -22,6 +20,13 @@
             $("#todosDocumentos").click(function () {
 
                 window.location = "Documentos.aspx";
+            });
+        });
+
+          $(document).ready(function () {
+            $("#docProveedor").click(function () {
+
+                window.location = "Proveedor.aspx";
             });
         });
     </script>

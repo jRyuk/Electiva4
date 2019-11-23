@@ -33,6 +33,12 @@
     </div>
 
    
-        
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#liInicio").click(function (e) {
+                    e.preventDefault();
+                })
+            });
+        </script>
 
 </asp:Content>
