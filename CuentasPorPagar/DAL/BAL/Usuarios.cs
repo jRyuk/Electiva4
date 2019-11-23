@@ -68,5 +68,10 @@ namespace DAL.BAL
             return base.GeAllFromTable("exec ReporteDocumentos");
         }
 
+        public DataTable ObtenerEstadoProveedor(string paramentos)
+        {
+            return base.GeAllFromTable($"exec ReporteProveedor {paramentos}");
+        }
+
     }
 }

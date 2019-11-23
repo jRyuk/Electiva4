@@ -125,5 +125,12 @@ namespace CuentasPorPagar.Windows
             mainPagos.MdiParent = this;
             mainPagos.Show();
         }
+
+        private void proveedoresToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            var mainPagos = new Reportes.EstadosDeCuentaProveedor();
+            mainPagos.MdiParent = this;
+            mainPagos.Show();
+        }
     }
 }

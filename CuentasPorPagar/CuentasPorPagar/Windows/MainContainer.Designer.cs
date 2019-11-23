@@ -32,10 +32,11 @@
             this.txtUser = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.administrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allDocumentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             // txtUser
             // 
             this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(44, 17);
+            this.txtUser.Size = new System.Drawing.Size(43, 17);
             this.txtUser.Text = "txtUser";
             // 
             // menuStrip1
@@ -76,6 +77,22 @@
             this.administrarToolStripMenuItem.Size = new System.Drawing.Size(96, 23);
             this.administrarToolStripMenuItem.Text = "Administrar";
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.allDocumentsToolStripMenuItem,
+            this.proveedoresToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // allDocumentsToolStripMenuItem
+            // 
+            this.allDocumentsToolStripMenuItem.Name = "allDocumentsToolStripMenuItem";
+            this.allDocumentsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.allDocumentsToolStripMenuItem.Text = "All Documents";
+            this.allDocumentsToolStripMenuItem.Click += new System.EventHandler(this.allDocumentsToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -87,24 +104,16 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // reportesToolStripMenuItem
+            // proveedoresToolStripMenuItem
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allDocumentsToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(79, 23);
-            this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // allDocumentsToolStripMenuItem
-            // 
-            this.allDocumentsToolStripMenuItem.Name = "allDocumentsToolStripMenuItem";
-            this.allDocumentsToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.allDocumentsToolStripMenuItem.Text = "All Documents";
-            this.allDocumentsToolStripMenuItem.Click += new System.EventHandler(this.allDocumentsToolStripMenuItem_Click);
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click_1);
             // 
             // MainContainer
             // 
@@ -137,5 +146,6 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allDocumentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
     }
 }
