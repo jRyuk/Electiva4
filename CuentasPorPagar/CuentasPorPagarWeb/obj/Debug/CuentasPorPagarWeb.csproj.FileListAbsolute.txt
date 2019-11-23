@@ -108,3 +108,5 @@ C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\obj\Debug\C
 C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\obj\Debug\CuentasPorPagarWeb.csproj.CopyComplete
 C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\obj\Debug\CuentasPorPagarWeb.dll
 C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\obj\Debug\CuentasPorPagarWeb.pdb
+C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\bin\itextsharp.dll
+C:\Users\Jacobo\Desktop\Electiva4\CuentasPorPagar\CuentasPorPagarWeb\bin\itextsharp.xml

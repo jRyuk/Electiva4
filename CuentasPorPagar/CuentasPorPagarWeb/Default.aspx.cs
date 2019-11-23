@@ -23,10 +23,7 @@ namespace CuentasPorPagarWeb
             var result = DAL.BAL.Login.Instance.LoginUser(usuario,contra);
             if (result && DAL.BAL.Login.Instance.LoginInfo != null)
             {
-                lblMessage.Text = "Usuario Valido";
-                /*
-                poner a donde redireccionara
-                */
+                Response.Redirect("Reportes.aspx");
             }
             else
             {
