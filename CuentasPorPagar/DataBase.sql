@@ -530,3 +530,49 @@ inner join Departamentos on Departamentos.Id = Proveedor.IdDepartamento
 inner join Municipios on Municipios.Id = Proveedor.IdMunicipio;
 
 end 
+
+
+
+create procedure ReporteProveedor @inicio  nvarchar(max), @fin nvarchar(max), @numero varchar(max)
+as
+begin 
+	--Select * from documento
+Select NumeroDocumento as 'N# Documento', 
+ case 
+	when AplicaIVA = 1
+	then 'Si'
+	when AplicaIVA = 0
+	then 
+	'No'
+	end 
+	as 'Incluye IVA',
+
+	ValorTotal as 'Valor documento',
+	(
+	
+	select  convert(Nvarchar,(select sum(p3.Monto) from Pagos p3 where p3.IdDocumento = d.Id)) as 'Monto cancelado'
+		
+		from Documento d 
+		inner join Proveedor prvdor on prvdor.Id = d.IdProveedor 
+		where 
+	
+		 d.Id = Documento.Id
+
+	) as 'Total Pagado', 
+	FechaEmision as 'Fecha de emision',
+	Concepto, 
+	Proveedor.Nombre as 'Proveedor',
+	Paises.Nombre as 'Pais',
+	Departamentos.Nombre as 'Departamento',
+	Municipios.Nombre as 'Municipio'
+from Documento 
+inner join Proveedor on Documento.IdProveedor = Proveedor.Id
+inner join Paises on Proveedor.IdPais = Paises.Id
+inner join Departamentos on Departamentos.Id = Proveedor.IdDepartamento
+inner join Municipios on Municipios.Id = Proveedor.IdMunicipio
+
+where Documento.FechaVencimiento between @inicio and @fin 
+and Proveedor.NumeroRegistro like '%'+@numero+'%'
+
+end
+
